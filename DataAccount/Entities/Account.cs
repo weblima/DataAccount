@@ -1,4 +1,5 @@
 ﻿using DataAccount.Entities.Exceptions;
+using System.Globalization;
 
 namespace DataAccount.Entities {
     class Account {
@@ -31,6 +32,10 @@ namespace DataAccount.Entities {
             }
 
             Balance -= amount;
+        }
+
+        public override string ToString() {
+            return "New balance: " + Balance.ToString("F2",CultureInfo.InvariantCulture);
         }
 
     }
